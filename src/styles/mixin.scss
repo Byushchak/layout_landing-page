@@ -1,0 +1,32 @@
+@mixin adapt-hover($hover, $touch: null) {
+  @media (hover: hover) {
+    #{$hover} {
+      @content;
+    }
+  }
+
+  @if $touch {
+    @media (hover: none) {
+      #{$touch} {
+        @content;
+      }
+    }
+  }
+}
+
+// button
+.button {
+  padding: 14.5px 131.5px;
+  background-color: $color-white;
+  color: $color-dark;
+  font-weight: 700;
+  border-radius: 40px;
+  line-height: 27px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+
+  @include adapt-hover('&:hover', '&:active') {
+    box-shadow: 1px 4px 16px $button-shadow;
+    background-color: $color-light-gray;
+  }
+}

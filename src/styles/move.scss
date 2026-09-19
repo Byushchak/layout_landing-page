@@ -1,0 +1,216 @@
+.move {
+  &__page {
+    margin-top: 120px;
+
+    @media (max-width: $small-mobile) {
+      margin-top: 60px;
+    }
+  }
+
+  /*   &__container {
+    стилі додати при потребі
+  } */
+
+  &__content {
+    display: flex;
+    justify-content: space-around;
+    column-gap: 34px;
+
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      gap: 32px;
+    }
+  }
+
+  &__title {
+    font-size: 64px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: -1.5px;
+
+    @media (max-width: $tablet) {
+      font-size: 48px;
+    }
+
+    @media (max-width: $small-mobile) {
+      font-size: 32px;
+    }
+  }
+  &__title--anim {
+    opacity: 0;
+    transform: translateY(50px);
+    transition:
+      opacity 0.9s ease,
+      transform 0.9s ease;
+
+    &.--animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &__text {
+    font-weight: 500;
+    width: 498px;
+    height: 96px;
+    font-size: 23px;
+    line-height: 140%;
+
+    @media (max-width: $tablet) {
+      width: 288px;
+      height: 192px;
+    }
+  }
+
+  &__text--anim {
+    opacity: 0;
+    transform: translateY(50px);
+    transition:
+      opacity 0.9s ease,
+      transform 0.9s ease;
+
+    &.--animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.bikes {
+  &__page {
+    margin-top: 164px;
+
+    @media (max-width: $tablet) {
+      margin-top: 132px;
+    }
+
+    @media (max-width: $small-mobile) {
+      margin-top: 92px;
+    }
+  }
+
+  /*   &__container {
+  }
+     стилі додати при потребі
+  &__content {
+  }
+ */
+
+  &__title {
+    display: flex;
+    justify-content: center;
+    font-size: 64px;
+    font-weight: 500;
+
+    @media (max-width: $tablet) {
+      font-size: 48px;
+    }
+
+    @media (max-width: $small-mobile) {
+      font-size: 32px;
+    }
+  }
+
+  &__title--anim {
+    opacity: 0;
+    transform: translateY(50px);
+    transition:
+      opacity 1.9s ease,
+      transform 1.9s ease;
+
+    &.--animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &__items {
+    display: grid;
+    margin-top: 56px;
+    gap: 24px;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: start;
+
+    @media (max-width: $tablet) {
+      padding-top: 48px;
+      grid-template-columns: 1fr;
+      justify-items: center;
+      gap: 48px;
+    }
+  }
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: -16px;
+    padding: 16px;
+    border-radius: $radius-small;
+    transition:
+      transform 0.9s ease,
+      box-shadow 0.4s ease,
+      opacity 0.6s ease;
+
+    @include adapt-hover('&:hover') {
+      box-shadow:
+        0 4px 16px 0 rgba(194, 194, 194, 0.08),
+        0 16px 40px 0 rgba(194, 194, 194, 0.15),
+        0 32px 64px 0 rgba(194, 194, 194, 0.12);
+    }
+
+    &--anim {
+      opacity: 0;
+      transform: translateY(40px);
+
+      &.--animate {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @for $i from 1 through 3 {
+        &:nth-child(#{$i}).--animate {
+          transition-delay:
+            #{($i - 1) * 0.4}s,
+            0s,
+            #{($i - 1) * 0.4}s;
+        }
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+  }
+  &__name {
+    padding-top: 32px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+  &__description {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    padding-top: 8px;
+
+    @media (max-width: $tablet) {
+      width: 100%;
+      max-width: 392px;
+    }
+
+    @media (max-width: $small-mobile) {
+      width: 100%;
+      max-width: 280px;
+    }
+  }
+
+  &__info {
+    line-height: 1.4;
+  }
+
+  &__price {
+    font-size: 24px;
+    font-weight: 700;
+    padding-top: 16px;
+    margin-top: auto;
+  }
+}

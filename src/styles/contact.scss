@@ -1,0 +1,178 @@
+.contact {
+  &__page {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 180px;
+    margin-bottom: 170px;
+
+    @media (max-width: $tablet) {
+      margin-top: 120px;
+      margin-bottom: 100px;
+    }
+
+    @media (max-width: $mobile) {
+      justify-content: center;
+      margin-top: 80px;
+    }
+  }
+  &__container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 48px;
+    width: 100%;
+  }
+  &__title {
+    font-size: 48px;
+    font-weight: 600;
+    letter-spacing: -1.5px;
+
+    @media (max-width: $tablet) {
+      font-weight: 500;
+    }
+
+    @media (max-width: $small-mobile) {
+      font-size: 32px;
+    }
+  }
+
+  &__title--anim {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+      opacity 1.9s ease,
+      transform 1.9s ease;
+
+    &.--animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  &__content {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    width: 100%;
+    gap: 198px;
+
+    @media (max-width: $tablet) {
+      gap: 24px;
+      padding-left: 57px;
+    }
+
+    @media (max-width: $mobile) {
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding-left: 0;
+    }
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 411px;
+
+    @media (max-width: $tablet) {
+      width: 288px;
+    }
+
+    &-name,
+    &-email {
+      padding: 14px 16px;
+      border-radius: $radius-large;
+      font-size: 14px;
+      &::placeholder {
+        transition: color 0.3s;
+      }
+
+      @include adapt-hover(
+        '&:hover::placeholder ,active::placeholder',
+        '&:focus::placeholder'
+      ) {
+        color: $color-dark;
+      }
+
+      @include adapt-hover('&:hover', '&:focus') {
+        box-shadow: 0 0 0 2px $color-border;
+      }
+      &:focus::placeholder {
+        color: $color-dark;
+      }
+
+      @include adapt-hover('&:hover', '&:focus') {
+        box-shadow: 0 0 0 2px $color-border;
+      }
+    }
+
+    &-textarea {
+      padding: 14px 16px;
+      resize: none;
+      border-radius: $radius-medium;
+      font-size: 14px;
+      height: 148px;
+      &::placeholder {
+        transition: color 0.3s;
+      }
+
+      @include adapt-hover(
+        '&:hover::placeholder ,active::placeholder',
+        '&:focus::placeholder'
+      ) {
+        color: $color-dark;
+      }
+
+      @include adapt-hover('&:hover', '&:focus') {
+        box-shadow: 0 0 0 2px $color-border;
+      }
+    }
+
+    /*     &-button {
+    стилі додати при потребі
+    } */
+  }
+
+  &__form--anim {
+    opacity: 0;
+    transform: translateY(50px);
+    transition:
+      opacity 0.8s ease,
+      transform 0.8s ease;
+
+    &.--animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    &-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    &-title {
+      font-size: 14px;
+      line-height: 1.4;
+    }
+    &-value {
+      line-height: 1.4;
+      font-weight: 500;
+    }
+  }
+  &__info--anim {
+    opacity: 0;
+    transform: translateX(60px);
+    transition:
+      opacity 0.8s ease,
+      transform 0.8s ease;
+
+    &.--animate {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
