@@ -38,3 +38,10 @@ const animElements = document.querySelectorAll('[class*="--anim"]');
 animElements.forEach((animElement) => {
   observer.observe(animElement);
 });
+
+const contactForm = document.querySelector('.contact__form');
+
+contactForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  contactForm.reset();
+});

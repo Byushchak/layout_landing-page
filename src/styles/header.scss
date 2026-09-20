@@ -2,8 +2,8 @@
   position: relative;
   min-height: 100svh;
   display: flex;
-  padding-top: $heading-lg;
-  padding-bottom: $heading-lg;
+  padding-top: $header-padding;
+  padding-bottom: $header-padding;
   width: 100%;
 
   @media (max-width: $small-mobile) {

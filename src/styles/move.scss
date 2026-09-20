@@ -1,9 +1,13 @@
 .move {
   &__page {
-    margin-top: 120px;
+    margin-top: $section-gap;
 
-    @media (max-width: $small-mobile) {
-      margin-top: 60px;
+    @media (max-width: $tablet) {
+      margin-top: $section-gap-tablet;
+    }
+
+    @media (max-width: $mobile) {
+      margin-top: $section-gap-mobile;
     }
   }
 
@@ -78,14 +82,14 @@
 
 .bikes {
   &__page {
-    margin-top: 164px;
+    margin-top: $section-gap;
 
     @media (max-width: $tablet) {
-      margin-top: 132px;
+      margin-top: $section-gap-tablet;
     }
 
     @media (max-width: $small-mobile) {
-      margin-top: 92px;
+      margin-top: $section-gap-mobile;
     }
   }
 
